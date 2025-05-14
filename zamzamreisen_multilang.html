@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamzam Reisen - Flight & Tourism</title>
+    <style>
+        body { margin: 0; font-family: sans-serif; direction: ltr; }
+        .header { background-color: #003366; color: white; padding: 20px; text-align: center; }
+        .hero {
+            background: url('background.jpg') center center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 1px 1px 4px #000;
+        }
+        .form-section, .contact-section { padding: 40px; text-align: center; }
+        .form-section input, .form-section select, .form-section button {
+            padding: 10px; margin: 5px; width: 200px;
+        }
+        footer {
+            background: #222; color: #fff; padding: 20px; text-align: center;
+        }
+        .lang-switcher {
+            position: absolute; top: 10px; right: 10px;
+        }
+    </style>
+    <script>
+        function switchLang(lang) {
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('hero-text').innerText = lang === 'ar' ?
+                'مكتبك لحجز الطيران والسياحة' : 'Your Travel Agency for Flights and Tourism';
+            document.getElementById('flight-label').innerText = lang === 'ar' ? 'ابحث عن رحلة طيران' : 'Search for Flights';
+            document.getElementById('contact-email').innerText = lang === 'ar' ?
+                'للتواصل أو الشكاوى: support@zamzamreisen.com' :
+                'For complaints, contact: support@zamzamreisen.com';
+        }
+    </script>
+</head>
+<body>
+    <div class="lang-switcher">
+        <button onclick="switchLang('en')">English</button>
+        <button onclick="switchLang('ar')">عربي</button>
+    </div>
+    <div class="header">
+        <h1>Zamzam Reisen</h1>
+        <p>Flight & Tourism</p>
+    </div>
+    <div class="hero">
+        <h2 id="hero-text">Your Travel Agency for Flights and Tourism</h2>
+    </div>
+    <div class="form-section">
+        <h3 id="flight-label">Search for Flights</h3>
+        <form>
+            <input type="text" placeholder="From (City or Airport)"><br>
+            <input type="text" placeholder="To (City or Airport)"><br>
+            <input type="date" placeholder="Departure Date"><br>
+            <input type="date" placeholder="Return Date"><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="contact-section">
+        <p id="contact-email">For complaints, contact: support@zamzamreisen.com</p>
+    </div>
+    <footer>
+        &copy; 2025 Zamzam Reisen. All rights reserved.
+    </footer>
+</body>
+</html>
